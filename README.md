@@ -4,21 +4,26 @@
 **Firebase Miner** is a Flutter-based chat application designed to provide real-time messaging capabilities. The application includes features such as user authentication, message management, and user interface customization.
 
 ## Features
-**User Authentication**: Sign up, log in, and manage accounts.
-**Real-Time Messaging**: Instant sending and receiving of messages.
-**User Profiles**: View and update user profiles.
-**Chat History** : Access and review previous conversations.
+
+**User Authentication**: Sign up, log in, and manage accounts.  
+**Real-Time Messaging**: Instant sending and receiving of messages.  
+**User Profiles**: View and update user profiles.  
+**Chat History** : Access and review previous conversations.  
 **Push Notifications**: Get notified of new messages.
 
 
 ## Usage
-**Authentication**: Sign up or log in to use the app.
-**Messaging**: Send and receive messages through the chat interface.
-**User Profiles**: Update your profile details.
+
+
+**Authentication**: Sign up or log in to use the app.  
+**Messaging**: Send and receive messages through the chat interface.  
+**User Profiles**: Update your profile details.  
 **Push Notifications**: Receive alerts for new messages.
 
 
-## Screenshorts
+## Screenshots
+
+
 ![f2](https://github.com/user-attachments/assets/016c7de6-1f32-4789-8b5d-82f0c808cae8)
 ![f1](https://github.com/user-attachments/assets/8327a627-6770-4346-8ec5-e93ce1a116c6)
 ![f5](https://github.com/user-attachments/assets/6e374dce-0bc6-4f06-acb5-9e1ca44f3817)
