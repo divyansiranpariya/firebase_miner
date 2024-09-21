@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       drawer: MyDrawer(
-        user: user,
+        user: user!,
       ),
       body: StreamBuilder(
         stream: FirestoreHelper.firestoreHelper.fetchAllUsers(),
@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
               itemBuilder: (context, i) {
                 return GestureDetector(
                   onTap: () {
-                    Get.toNamed('/ChatPage', arguments: allDocs[i].data());
+                    Get.toNamed('/Chat_page', arguments: allDocs[i].data());
                   },
                   child: Card(
                     margin: EdgeInsets.symmetric(horizontal: 12, vertical: 12),

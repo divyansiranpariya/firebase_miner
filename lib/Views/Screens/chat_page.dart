@@ -18,7 +18,7 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   TextEditingController chatControoler = TextEditingController();
   TextEditingController editingController = TextEditingController();
-  bool ischange = false;
+
   @override
   Widget build(BuildContext context) {
     Map<String, dynamic> reciever =
@@ -117,9 +117,8 @@ class _ChatPageState extends State<ChatPage> {
                                                   (reciever['email'] !=
                                                           allMessages[i].data()[
                                                               'receiverEmail'])
-                                                      ? Container(
-                                                          color: Colors.pink,
-                                                          child: Column(
+                                                      ? Chip(
+                                                          label: Column(
                                                             children: [
                                                               Text(
                                                                   "${allMessages[i].data()['msg']}"),
@@ -246,31 +245,13 @@ class _ChatPageState extends State<ChatPage> {
                                                                   Text('Edit'),
                                                             ),
                                                           ],
-                                                          child: Container(
-                                                            decoration: BoxDecoration(
-                                                                color:
-                                                                    Colors.pink,
-                                                                borderRadius: (allMessages[i]
-                                                                            .data()[
-                                                                        ''])
-                                                                    ? BorderRadius.only(
-                                                                        topLeft:
-                                                                            Radius.circular(
-                                                                                10),
-                                                                        bottomRight:
-                                                                            Radius.circular(
-                                                                                10))
-                                                                    : BorderRadius.only(
-                                                                        topLeft:
-                                                                            Radius.circular(
-                                                                                10),
-                                                                        bottomRight:
-                                                                            Radius.circular(10))),
-                                                            child: Padding(
-                                                              padding:
-                                                                  const EdgeInsets
-                                                                      .all(8.0),
-                                                              child: Column(
+                                                          child: Padding(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                    .only(
+                                                                    right: 8),
+                                                            child: Chip(
+                                                              label: Column(
                                                                 children: [
                                                                   Text(
                                                                       "${allMessages[i].data()['msg']}"),
@@ -318,38 +299,32 @@ class _ChatPageState extends State<ChatPage> {
                     child: SizedBox(
                       height: 50,
                       child: TextField(
-                        onChanged: (value) {
-                          ischange = value.isNotEmpty;
-                        },
+                        keyboardType: TextInputType.text,
+                        // onChanged: (value) {
+                        //   ischange = value.isNotEmpty;
+                        // },
                         controller: chatControoler,
                         decoration: InputDecoration(
                             hintText: "Type Here",
                             suffixIcon: GestureDetector(
-                                onTap: (ischange)
-                                    ? () async {
-                                        String msg = chatControoler.text;
-                                        await FirestoreHelper.firestoreHelper
-                                            .sendMessage(
-                                                msg: msg,
-                                                receiverEmail:
-                                                    reciever['email']);
-                                        chatControoler.clear();
-                                        await FCMNotificationHelper
-                                            .fCMNotificationHelper
-                                            .sendFCM(
-                                                msg: "Hello",
-                                                senderEmail: AuthHelper
-                                                    .firebaseAuth
-                                                    .currentUser!
-                                                    .email!,
-                                                token: reciever['token']);
-                                      }
-                                    : null,
+                                onTap: () async {
+                                  String msg = chatControoler.text;
+                                  await FirestoreHelper.firestoreHelper
+                                      .sendMessage(
+                                          msg: msg,
+                                          receiverEmail: reciever['email']);
+                                  chatControoler.clear();
+                                  await FCMNotificationHelper
+                                      .fCMNotificationHelper
+                                      .sendFCM(
+                                          msg: "Hello",
+                                          senderEmail: AuthHelper
+                                              .firebaseAuth.currentUser!.email!,
+                                          token: reciever['token']);
+                                },
                                 child: Icon(
                                   Icons.send,
-                                  color: (ischange)
-                                      ? Colors.blue
-                                      : Colors.grey.shade300,
+                                  color: Colors.grey.shade300,
                                 )),
                             border: OutlineInputBorder()),
                       ),

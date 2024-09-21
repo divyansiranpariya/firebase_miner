@@ -48,12 +48,12 @@ void main() async {
         ? ThemeData.dark()
         : ThemeData.light(),
     debugShowCheckedModeBanner: false,
-    initialRoute: '/LoginPage',
+    initialRoute: '/Login_page',
     getPages: [
       GetPage(name: '/', page: () => HomePage()),
-      GetPage(name: '/LoginPage', page: () => LoginPage()),
-      GetPage(name: '/ChatPage', page: () => ChatPage()),
-      GetPage(name: '/SplaceScreen', page: () => SplaceScreen())
+      GetPage(name: '/Login_page', page: () => LoginPage()),
+      GetPage(name: '/Chat_page', page: () => ChatPage()),
+      GetPage(name: '/Splace_screen', page: () => SplaceScreen())
     ],
   ));
 }

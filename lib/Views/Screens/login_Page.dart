@@ -95,6 +95,11 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    // IconButton(
+                    //     onPressed: () {
+                    //       themeController.toggleTheme();
+                    //     },
+                    //     icon: Icon(Icons.sunny)),
                     PopupMenuButton<String>(
                       itemBuilder: (BuildContext context) {
                         return [
@@ -131,11 +136,6 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                         ];
                       },
                     ),
-                    IconButton(
-                        onPressed: () {
-                          themeController.toggleTheme();
-                        },
-                        icon: Icon(Icons.sunny))
                   ],
                 )),
             Expanded(
@@ -163,7 +163,7 @@ class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
                           height: 10,
                         ),
                         Text(
-                          "Welcome To Little shop",
+                          "Welcome To Little app",
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,

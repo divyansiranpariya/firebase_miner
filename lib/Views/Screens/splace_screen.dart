@@ -23,7 +23,7 @@ class _SplaceScreenState extends State<SplaceScreen> {
         if (FirebaseAuth.instance.currentUser != null) {
           Get.offAllNamed("/");
         } else {
-          Get.offAllNamed("/LoginPage");
+          Get.offAllNamed("/Login_page");
         }
         timer.cancel();
       },
@@ -33,8 +33,14 @@ class _SplaceScreenState extends State<SplaceScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: CircularProgressIndicator(),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                image: NetworkImage(
+                    "https://img.freepik.com/free-photo/top-view-education-day-concept-with-copy-space_23-2148779746.jpg?semt=ais_hybrid"))),
       ),
     );
   }
