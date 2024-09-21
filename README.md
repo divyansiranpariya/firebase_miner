@@ -1,7 +1,7 @@
-#Firebase Miner
+## Firebase Miner
 
 
-**Firebase Miner** a Flutter-based chat application designed to provide real-time messaging capabilities. The application includes features such as user authentication, message management, and user interface customization.
+**Firebase Miner** is a Flutter-based chat application designed to provide real-time messaging capabilities. The application includes features such as user authentication, message management, and user interface customization.
 
 ## Features
 **User Authentication**: Sign up, log in, and manage accounts.
